@@ -8,20 +8,16 @@
 
 """
 
+from datetime import date,time,datetime,timedelta
+
 def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    date_now = date.today()
+    date_yesterday, date_past30 = date_now - timedelta(1),date_now - timedelta(30)
+    print(f' Сегодня: {date_now}\n Вчера: {date_yesterday}\n 30 дней назад: {date_past30}')
 
 
 def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    return datetime.strptime(date_string,'%m/%d/%y %H:%M:%S.%f')
 
 if __name__ == "__main__":
     print_days()
